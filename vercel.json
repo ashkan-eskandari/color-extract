@@ -1,14 +1,14 @@
-{
-  "functions": {
-    "api/main.py": {
-      "runtime": "@vercel/python",
-      "entrypoint": "gunicorn -w 4 -b 0.0.0.0:$PORT main:app"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/main.py"
-    }
-  ]
-}
+ {
+     "builds": [
+         {
+             "src": "/main.py",
+             "use": "@vercel/python"
+         }
+     ],
+     "routes": [
+         {
+             "src": "/(.*)",
+             "dest": "/main.py"
+         }
+     ]
+ }
