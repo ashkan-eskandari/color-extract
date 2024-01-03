@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory, url_for
 from flask_bootstrap import Bootstrap
-from flask_uploads import UploadSet, IMAGES, configure_uploads, DOCUMENTS
+from flask_uploads import UploadSet, IMAGES, configure_uploads
 from colorExtract import ExtractColors
 import os, shutil
 
