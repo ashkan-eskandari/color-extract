@@ -3,13 +3,13 @@ const colorsSection = document.getElementById("colors_section")
 const img = document.getElementById("file_url")
 const table = document.getElementById("table")
 const img_spinner = document.getElementById("img_spinner")
-form.addEventListener('submit', evt => {
+form.addEventListener('submit', async evt => {
     evt.preventDefault();
     colorsSection.classList.add("d-none")
     table.innerHTML = ""
     img.src = ""
     img_spinner.classList.remove("d-none")
-    fetch("/upload", {
+    await fetch("/upload", {
         method: 'POST',
         body: new FormData(evt.target)
     }).then(resp => resp.json())
